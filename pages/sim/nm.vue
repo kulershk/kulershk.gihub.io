@@ -14,31 +14,25 @@
                 </tr>
               </template>
             </table>
-
           </b-card-text>
         </b-card>
       </b-col>
-
       <b-col>
         <b-card class="mb-2" sub-title="Options">
           <b-card-text>
-
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="customCheck1" v-model="dwh_spec">
               <label class="custom-control-label" for="customCheck1">Dwh spec</label>
             </div>
-
             <hr>
               Kill count: {{ kc }}
             <hr>
-
             <b-button @click="rollDrop" squared variant="outline-success">Kill</b-button>
             <b-button @click="resetDrop" squared variant="outline-danger">Reset</b-button> |
             <b-button @click="autokill = !autokill" squared variant="outline-danger">{{ !autokill ? 'Start':'Stop' }}</b-button>
             <br>
             <br>
             <vue-slider v-model="autospeed" :min="1" :max="100" />
-
           </b-card-text>
         </b-card>
         <b-card sub-title="Select gear">
