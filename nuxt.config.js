@@ -15,17 +15,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {name: 'twitter:card', content: 'summary'},
-      {name: 'twitter:title', content: 'Vue Social Cards Example'},
-      {name: 'twitter:description', content: 'Vue sample site showing off Twitter and Facebook Cards.'},
-      // image must be an absolute path
-      {name: 'twitter:image', content: "https://cdn.discordapp.com/emojis/482568707541827594.png?"},
-      // Facebook OpenGraph
-      {property: 'og:title', content: 'Vue Social Cards Example'},
-      {property: 'og:site_name', content: 'Vue Example'},
-      {property: 'og:type', content: 'website'},
-      {property: 'og:image', content:  "https://cdn.discordapp.com/emojis/482568707541827594.png?"},
-      {property: 'og:description', content: 'Vue sample site showing off Twitter and Facebook Cards.'}
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
