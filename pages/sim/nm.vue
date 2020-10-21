@@ -47,7 +47,6 @@
             <table class="table table-sm">
               <template v-for="(item, index) in gear_setup">
                 <tr>
-                  <th>{{ index }}</th>
                   <th>{{ item.name }}</th>
                   <td>{{ item.dps[0].toFixed(3) }}</td>
                   <td>{{ item.dps[1].toFixed(3) }}</td>
@@ -152,10 +151,23 @@ export default Vue.extend({
       dwh_spec: <boolean> false,
       gear_setup: [
         {name: "Bludgeon + Max melee(Fire cape)", dps: [7.373, 7.910]},
-        {name: "Bludgeon + Max melee(Mythical cape)", dps: [7.445, 7.966]},
+        {name: "Bludgeon + Max melee(Mythical Cape)", dps: [7.445, 7.966]},
         {name: "Bludgeon + Max melee(Infernal cape)", dps: [7.569, 8.106]},
+        {name: "Mace + Max melee(Fire cape)", dps: [8.133, 8.626]},
+        {name: "Mace + Max melee(Mythical Cape)", dps: [8.016, 8.508]},
+        {name: "Mace + Max melee(Infernal cape)", dps: [8.306, 8.822]},
+        {name: "Scythe + Max melee(Fire cape)", dps: [7.647, 8.751]},
+        {name: "Scythe + Max melee(Mythical Cape)", dps: [7.770, 8.819]},
         {name: "Scythe + Max melee(Infernal cape)", dps: [8.069, 9.188]},
-        {name: "Scythe + Inq(Infernal cape)", dps: [9.350, 10.227]},
+        {name: "Bludgeon + Inquisitor(Fire cape)", dps: [7.985, 8.444]},
+        {name: "Bludgeon + Inquisitor(Mythical Cape)", dps: [7.876, 8.316]},
+        {name: "Bludgeon + Inquisitor(Infernal cape)", dps: [8.177, 8.638]},
+        {name: "Mace + Inquisitor(Fire cape)", dps: [8.678, 9.124]},
+        {name: "Mace + Inquisitor(Mythical Cape)", dps: [8.560, 8.988]},
+        {name: "Mace + Inquisitor(Infernal cape)", dps: [8.870, 9.319]},
+        {name: "Scythe + Inquisitor(Fire cape)", dps: [8.931, 9.793]},
+        {name: "Scythe + Inquisitor(Mythical Cape)", dps: [9.070, 9.905]},
+        {name: "Scythe + Inquisitor(Infernal cape)", dps: [9.350, 10.227]},
       ],
       players_list: <number[]> [0,0,0,1,1],
       players_drops: <User[]> [],
