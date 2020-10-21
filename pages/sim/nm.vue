@@ -296,7 +296,7 @@ export default Vue.extend({
             return acc = self.gear_setup[el].dps[0] + acc
           });
           rolled = Math.random() * self.totalDps();
-          const rolledPlayer: any = chances.filter(el => el <= rolled).length;
+          const rolledPlayer: any = chances.filter(el => el < rolled).length;
 
           let foundUser = self.players_drops.filter(user => user.userIndex == rolledPlayer);
           if(foundUser.length === 0) {
