@@ -6046,6 +6046,13 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+nuxt-seo@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/nuxt-seo/-/nuxt-seo-1.4.2.tgz#1b975efe1149817bb7f0ab92ea38f83a8d248ec6"
+  integrity sha512-uT0UTB+zrgr5yEzJs6lYjfNtXpOAPeKUZqr9mav3ZUbEPCndsxf5ykLSx21pcGQWBCz4XhFjAlkZxPRr9b7RKA==
+  dependencies:
+    debug "^4.2.0"
+
 nuxt@^2.14.6:
   version "2.14.7"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.14.7.tgz#041bb3f5c659b1fec80042d974f68a0ed4e93aa9"
