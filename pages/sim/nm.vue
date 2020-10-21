@@ -60,12 +60,16 @@
         <b-card sub-title="Timeline">
           <b-card-text>
 
-            <template v-for="(item) in drop_kc">
-              <div class="item">
-                <rsnum v-bind:number="item.kc"></rsnum>
-                <img v-bind:src="'https://static.runelite.net/cache/item/icon/'+item.id+'.png'">
-              </div>
-            </template>
+            <div class="horizontal-scroll-wrapper" >
+              <template v-for="(item) in drop_kc  ">
+                <div class="item">
+                  <div class="item_wrapper">
+                    <img v-bind:src="'https://static.runelite.net/cache/item/icon/'+item.id+'.png'">
+                    <rsnum v-bind:number="item.kc"></rsnum>
+                  </div>
+                </div>
+              </template>
+            </div>
 
           </b-card-text>
         </b-card>
@@ -82,8 +86,10 @@
                   <template v-for="(allDrops, index2) in drops">
                     <template v-for="(drops, index3) in allDrops.drops">
                       <div class="item">
-                        <rsnum v-bind:number="getUserDrops(index, drops.id)"></rsnum>
-                        <img v-bind:class="{noitem: !getUserDrops(index, drops.id)}" v-bind:src="'https://static.runelite.net/cache/item/icon/'+drops.id+'.png'">
+                        <div class="item_wrapper">
+                          <img v-bind:class="{noitem: !getUserDrops(index, drops.id)}" v-bind:src="'https://static.runelite.net/cache/item/icon/'+drops.id+'.png'">
+                          <rsnum v-bind:number="getUserDrops(index, drops.id)"></rsnum>
+                        </div>
                       </div>
                     </template>
                   </template>
@@ -109,10 +115,50 @@
 
 .item {
   float: left;
-  span {
-    color: yellow;
-    -webkit-text-stroke: 1px black;
-    position: absolute;
+  width: 25%;
+  text-align: center;
+  overflow: hidden;
+  .item_wrapper {
+    text-align: left;
+    display: inline-block;
+    overflow: hidden;
+  }
+}
+
+.horizontal-scroll-wrapper {
+  white-space: nowrap; /*Prevents Wrapping*/
+
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  .item {
+    width: 38px;
+    display: inline-block; /*Display inline and maintain block characteristics.*/
+    vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
+    white-space: normal; /*Prevents child elements from inheriting nowrap.*/
+
+    float: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }
 
@@ -202,7 +248,15 @@ export default Vue.extend({
         self.createInterval();
         if(!self.autokill) return;
         self.rollDrop();
-      },1000 - (1000/101*self.autospeed));
+
+        if(self.autospeed >= 80) {
+          let howMany = Math.abs(80 - self.autospeed);
+          for (let i = 0; i < howMany; i++) {
+            self.rollDrop();
+          }
+        }
+
+      },1000 - (1000/101*Math.min(self.autospeed,85)));
     },
     addPlayer (index: number) {
       this.players_list.push(index);
@@ -251,7 +305,7 @@ export default Vue.extend({
             foundUser[0].drops.push(rolledItem.id);
           }
 
-          self.drop_kc.push({id:rolledItem.id, kc: self.kc});
+          self.drop_kc.unshift({id:rolledItem.id, kc: self.kc});
 
         }
       });

@@ -20,6 +20,7 @@ export default {
 <style scoped>
   .rsnum {
     position: relative;
-    top: 15px;
+    top: -38px;
+    height: 0px;
   }
 </style>
