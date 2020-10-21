@@ -2,7 +2,7 @@
   <b-container>
     <b-row class="mb-2">
       <b-col>
-        <b-card>
+        <b-card sub-title="Player list">
           <b-card-text>
             <table class="table table-sm">
               <template v-for="(item, index) in players_list">
@@ -20,7 +20,7 @@
       </b-col>
 
       <b-col>
-        <b-card class="mb-2">
+        <b-card class="mb-2" sub-title="Options">
           <b-card-text>
 
             <div class="custom-control custom-checkbox">
@@ -35,11 +35,13 @@
             <b-button @click="rollDrop" squared variant="outline-success">Kill</b-button>
             <b-button @click="resetDrop" squared variant="outline-danger">Reset</b-button> |
             <b-button @click="autokill = !autokill" squared variant="outline-danger">{{ !autokill ? 'Start':'Stop' }}</b-button>
+            <br>
+            <br>
             <vue-slider v-model="autospeed" :min="1" :max="100" />
 
           </b-card-text>
         </b-card>
-        <b-card>
+        <b-card sub-title="Select gear">
           <b-card-text>
 
             <table class="table table-sm">
@@ -145,7 +147,7 @@ export default Vue.extend({
     return {
       interval: <any> undefined,
       autokill: false,
-      autospeed: 1,
+      autospeed: 95,
       kc: 0,
       dwh_spec: <boolean> false,
       gear_setup: [
