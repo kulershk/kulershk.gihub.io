@@ -15,6 +15,17 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {name: 'twitter:card', content: 'OSRS Drop'},
+      {name: 'twitter:title', content: 'OSRS Drop Simulator'},
+      {name: 'twitter:description', content: 'OSRS Drop Simulator'},
+      // image must be an absolute path
+      {name: 'twitter:image', content: "https://cdn.discordapp.com/emojis/482568707541827594.png?"},
+      // Facebook OpenGraph
+      {property: 'og:title', content: 'OSRS Drop'},
+      {property: 'og:site_name', content: 'OSRS Drop'},
+      {property: 'og:type', content: 'website'},
+      {property: 'og:image', content:  "https://cdn.discordapp.com/emojis/482568707541827594.png?"},
+      {property: 'og:description', content: 'OSRS Drop Simulator'}
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
