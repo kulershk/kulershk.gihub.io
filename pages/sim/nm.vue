@@ -215,7 +215,7 @@ export default Vue.extend({
       drop_kc: <DropKc[]> [],
       drops: [
         {
-          chance: 120,
+          chance: 192,
           drops: [
             { name: "Inquisitor's mace", chance: 1, id: 24417 },
             { name: "Inquisitor's great helm", chance: 2, id: 24419 },
@@ -225,7 +225,7 @@ export default Vue.extend({
           ]
         },
         {
-          chance: 600,
+          chance: 960,
           drops: [
             { name: "Harmonised", chance: 1, id: 24511 },
             { name: "Volatile", chance: 1, id: 24514 },
